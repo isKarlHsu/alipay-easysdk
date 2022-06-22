@@ -20,9 +20,10 @@ class Client {
      * @param string $totalAmount
      * @param string $quitUrl
      * @param string $returnUrl
+     * @param string $method
      * @return AlipayTradeWapPayResponse
      */
-    public function pay($subject, $outTradeNo, $totalAmount, $quitUrl, $returnUrl){
+    public function pay($subject, $outTradeNo, $totalAmount, $quitUrl, $returnUrl, $method){
         $systemParams = [
             "method" => "alipay.trade.wap.pay",
             "app_id" => $this->_kernel->getConfig("appId"),
@@ -47,7 +48,7 @@ class Client {
         ];
         $sign = $this->_kernel->sign($systemParams, $bizParams, $textParams, $this->_kernel->getConfig("merchantPrivateKey"));
         $response = [
-            "body" => $this->_kernel->generatePage("POST", $systemParams, $bizParams, $textParams, $sign)
+            "body" => $this->_kernel->generatePage($method, $systemParams, $bizParams, $textParams, $sign)
         ];
         return AlipayTradeWapPayResponse::fromMap($response);
     }
