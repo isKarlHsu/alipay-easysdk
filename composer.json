@@ -1,12 +1,12 @@
 {
-	"name":"alipaysdk/easysdk",
+	"name":"isKarlHsu/easysdk",
 	"description":"支付宝官方 Alipay Easy SDK",
 	"type":"library",
 	"version":"2.2.2",
 	"authors":[
 		{
-			"name":"junying.wjy",
-			"email":"junying.wjy@antfin.com"
+			"name":"KarlHsu",
+			"email":"karlxu0424@gmail.com"
 		}
 	],
 	"autoload":{
