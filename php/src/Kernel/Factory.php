@@ -24,7 +24,7 @@ class Factory
 {
     public $config = null;
     public $kernel = null;
-    private static $instance;
+    public static $instance;
     protected static $base;
     protected static $marketing;
     protected static $member;
